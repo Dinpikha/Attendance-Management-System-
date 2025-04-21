@@ -9,8 +9,8 @@ from PIL import Image
 from io import BytesIO
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 import sqlite3
-from SMTP import send_attendance_alert  # Your custom email function
-import matplotlib.pyplot as plt  # <-- for displaying result
+from SMTP import send_attendance_alert 
+import matplotlib.pyplot as plt  
 
 app = Flask(__name__)
 CORS(app) 
@@ -156,7 +156,7 @@ def recognize():
     conn.commit()
     conn.close()
 
-    # Optional: Alert for unknown faces
+ 
     if unknown_count > 0:
         send_attendance_alert("Unknown face(s) detected!")
 
